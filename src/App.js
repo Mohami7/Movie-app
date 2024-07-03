@@ -8,6 +8,7 @@ import NavBar from './Component/NavBar';
 import Movie from './Component/Movie';
 import Home from './Component/Home';
 import ShowDetails from './Component/ShowDetails';
+import Movies from './Component/Movies';
 
 
 function App() {
@@ -15,9 +16,11 @@ function App() {
     <Provider store={store}>
       <NavBar/>
       <Routes>
-        <Route path="/" element={<Home/>} />
+        <Route path="/" element={<Movies/>} >
+        <Route index element={<Home/>}/>
         <Route path="/:id" element={<ShowDetails/>}/>
         <Route path="/movies" element={<Movie/>} />
+        </Route>
       </Routes>
     </Provider>
   );
